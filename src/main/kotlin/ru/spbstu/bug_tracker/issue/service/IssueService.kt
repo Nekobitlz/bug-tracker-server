@@ -27,7 +27,7 @@ class IssueService(
             UserType.dev -> issueRepository.findByAssigneeId(userId)
             UserType.test -> issueRepository.findByAuthorId(userId)
         }
-        return Success(HttpStatus.FOUND, issues)
+        return Success(HttpStatus.OK, issues)
     }
 
     fun getIssue(id: Long) = issueRepository.findByIdOrNull(id)
